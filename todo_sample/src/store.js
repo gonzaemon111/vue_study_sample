@@ -22,7 +22,7 @@ const store = new Vuex.Store({
         done: false
       }
     ],
-    nextTaskId: 3,
+    nextTaskId: 3
   },
 
   // mutation
@@ -38,6 +38,7 @@ const store = new Vuex.Store({
     },
     toggleTaskStatus (state, { id }) {
       // filterメソッド: コールバック関数で指定された条件を満たす配列の要素を返します。
+      // つまり、stateのtasksのidを引っ張ってきて、それが、taskのidと一致しているかどうかを考える。
       const filtered = state.tasks.filter(task => {
         return task.id === id
       })
